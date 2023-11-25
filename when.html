@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When It's Time</title>
+    <link rel="stylesheet" href="style.css">
+    <style>     
+        iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 600px;
+            border: solid 1px #777;
+        }
+
+        button {
+            background-color: #039BE5;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            position: absolute;
+            top: 10px; /* Adjust the top position as needed */
+            left: 10px; /* Adjust the left position as needed */
+        }
+    </style>
+    <!-- Google Calendar Appointment Scheduling begin -->
+    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+    
+    <!-- end Google Calendar Appointment Scheduling -->
+</head>
+
+<body>
+    <h1>it's time</h1>
+    
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&showNav=1&showTitle=1&showCalendars=1&src=YmM4ZmM3N2MzNTYxNGFlZjMzNDE0ODAxNWIwZmU5ZjE1YWI2YTY1YmIwY2FmN2ZiYjEwM2YzNDdkMDhjYzJjOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23B39DDB" frameborder="0" scrolling="no"></iframe>
+
+    <script>
+        (function() {
+            var target = document.currentScript;
+            window.addEventListener('load', function() {
+                calendar.schedulingButton.load({
+                url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1TFi4hqDJM0ozT4QJ0ki2GQP1CBrdusrtXR7uPVi6cPLVUZALlbS0__Z87DpEiZBuGDeXW4Hk1?gv=true',
+                color: '#039BE5',
+                label: 'Talk to me',
+                target,
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>
