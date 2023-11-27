@@ -1,74 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            position: relative;
-            margin: 0;
-            height: 100vh;
-            overflow: hidden;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olly Cohen</title>
+  <!-- Add Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      position: relative;
+      min-height: 100vh;
+      margin: 0;
+    }
 
-        button {
-            position: absolute;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #3498db;
-            color: #fff;
-            border-radius: 20px;
-            transition: background-color 0.3s;
-        }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-top: 20px;
+      font-size: 28px;
+    }
 
-        #who {
-            top: 20%;
-            left: 10%;
-        }
+    .section {
+      display: none;
+      text-align: center;
+      margin-top: 10px; /* Small top margin for each section */
+      position: relative;
+    }
 
-        #what {
-            top: 50%;
-            left: 60%;
-        }
+    .back-btn {
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      box-sizing: border-box;
+    }
 
-        #when {
-            top: 80%;
-            left: 30%;
-        }
+    .hidden {
+      display: none !important;
+    }
 
-        #where {
-            top: 40%;
-            left: 40%;
-        }
+    @media (max-width: 576px) {
+      #homepage {
+        flex-direction: column;
+        width: 75%;
+      }
+    }
 
-        #why {
-            top: 70%;
-            left: 80%;
-        }
+    .random-position {
+      position: absolute;
+    }
 
-        #how {
-            top: 10%;
-            left: 70%;
-        }
-
-        button:hover {
-            background-color: #2980b9;
-        }
-    </style>
+    iframe {
+      width: 80%;
+      height: calc(100vh - 80px); /* Adjust the height as needed */
+      border: 0;
+    }
+  </style>
 </head>
-
 <body>
-  <a href="who.html"><button id="who">Who</button></a>
-  <a href="what.html"><button id="what">What</button></a>
-  <a href="when.html"><button id="when">When</button></a>
-  <a href="where.html"><button id="where">Where</button></a>
-  <a href="why.html"><button id="why">Why</button></a>
-  <a href="how.html"><button id="how">How</button></a>
-</body>
 
+<div id="homepage" class="d-flex flex-wrap gap-2">
+  <!-- Dynamically generate and randomly position buttons -->
+  <a class="btn btn-primary random-position" href="#who" onclick="showSection('who')">Who</a>
+  <a class="btn btn-primary random-position" href="#what" onclick="showSection('what')">What</a>
+  <a class="btn btn-primary random-position" href="#when" onclick="showSection('when')">When</a>
+  <a class="btn btn-primary random-position" href="#where" onclick="showSection('where')">Where</a>
+  <a class="btn btn-primary random-position" href="#why" onclick="showSection('why')">Why</a>
+  <a class="btn btn-primary random-position" href="#how" onclick="showSection('how')">How</a>
+</div>
+
+<!-- Statically generated sections with relative links -->
+<div id="who" class="section">
+  <button class="btn btn-secondary back-btn" onclick="goBack()">Go Back</button>
+  <h1>who am i, i am i, how do you do</h1>
+  <p>move like a noodle</p>
+  <p>fall like a leaf</p>
+  <p>think on a thought</p>
+  <p>breathe nasally</p>
+  <p>sing involuntarily</p>
+  <a href="https://splattern.substack.com/" target="_blank"><p>write daily</p></a>
+</div>
+
+<div id="what" class="section">
+  <button class="btn btn-secondary back-btn" onclick="goBack()">Go Back</button>
+  <h1>i want you to know</h1>
+  
+  <!-- Embedded spreadsheet -->
+  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM0KphnIK4JjhDrsZqdhcfY1h1u0SvMdNgheLJLZjpHWR4AciXU0qh0Q1mxk-LPn-GsK7Ozt-vUVPo/pubhtml?widget=true&amp;headers=false"></iframe>
+  <!-- Your additional content goes here -->
+</div>
+
+<div id="when" class="section">
+  <button class="btn btn-secondary back-btn" onclick="goBack()">Go Back</button>
+  <h1>if not now, when!</h1>
+  <div>
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&showNav=1&showTitle=1&showCalendars=1&src=YmM4ZmM3N2MzNTYxNGFlZjMzNDE0ODAxNWIwZmU5ZjE1YWI2YTY1YmIwY2FmN2ZiYjEwM2YzNDdkMDhjYzJjOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23B39DDB" frameborder="0" scrolling="no"></iframe>
+  </div>
+</div>
+
+<div id="where" class="section">
+  <button class="btn btn-secondary back-btn" onclick="goBack()">Go Back</button>
+  <h1>where i'm going</h1>
+  <div>
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1-KsbHm6Cf_IuGlyOryy1ZHaY8SAIA60&ehbc=2E312F" width="640" height="480"></iframe>
+  </div>
+</div>
+
+<div id="why" class="section">
+  <button class="btn btn-secondary back-btn" onclick="goBack()">Go Back</button>
+  <p>This is the 'Why' section.</p>
+</div>
+
+<div id="how" class="section">
+  <button class="btn btn-secondary back-btn" onclick="goBack()">Go Back</button>
+  <h1>how to connect</h1>
+  <!-- Google Calendar Appointment Scheduling begin -->
+  <div>
+    <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1TFi4hqDJM0ozT4QJ0ki2GQP1CBrdusrtXR7uPVi6cPLVUZALlbS0__Z87DpEiZBuGDeXW4Hk1?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+  </div>
+  <!-- end Google Calendar Appointment Scheduling -->
+</div>
+
+<!-- Add Bootstrap JS and Popper.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  function showSection(sectionId) {
+    // Hide all sections
+    document.querySelectorAll('.section').forEach(section => {
+      section.style.display = 'none';
+    });
+
+    // Hide the homepage buttons
+    document.getElementById('homepage').classList.add('hidden');
+
+    // Show the selected section
+    document.getElementById(sectionId).style.display = 'block';
+
+    // Update the URL
+    history.pushState(null, null, `#${sectionId}`);
+  }
+
+  function goBack() {
+    // Hide all sections
+    document.querySelectorAll('.section').forEach(section => {
+      section.style.display = 'none';
+    });
+
+    // Show the homepage buttons
+    document.getElementById('homepage').classList.remove('hidden');
+
+    // Update the URL
+    history.pushState(null, null, '#');
+  }
+
+  // Check if there's a hash in the URL on page load and show the corresponding section
+  window.onload = function () {
+    const hash = window.location.hash.substring(1);
+    if (hash !== '') {
+      showSection(hash);
+    }
+  };
+
+  // Dynamically position buttons randomly
+  const buttonTitles = ['who', 'what', 'when', 'where', 'why', 'how'];
+  const positions = [];
+  const maxAttempts = 50;
+
+  buttonTitles.forEach(title => {
+    let left, top, attempts = 0;
+    do {
+      left = Math.floor(Math.random() * 80) + 1; // Random left position between 1% and 80%
+      top = Math.floor(Math.random() * 80) + 1; // Random top position between 1% and 80%
+      attempts += 1;
+
+      // If the maximum number of attempts is reached, break the loop
+      if (attempts === maxAttempts) {
+        console.error(`Unable to find non-overlapping position for button "${title}" after ${maxAttempts} attempts.`);
+        break;
+      }
+    } while (positions.some(pos => isOverlap(left, top, pos)));
+
+    positions.push({ left, top });
+
+    const button = document.querySelector(`[href="#${title}"]`);
+    button.style.left = `${left}%`;
+    button.style.top = `${top}%`;
+  });
+
+  function isOverlap(left, top, pos) {
+    let horizontalThreshold = 10; // Default threshold for desktop
+    let verticalThreshold = 5; // Default threshold for desktop
+
+    // Adjust thresholds for mobile
+    if (window.innerWidth <= 576) {
+      horizontalThreshold = 30; // Higher threshold for mobile
+    }
+
+    const horizontalOverlap = Math.abs(left - pos.left) < horizontalThreshold;
+    const verticalOverlap = Math.abs(top - pos.top) < verticalThreshold;
+
+    return horizontalOverlap && verticalOverlap;
+  }
+</script>
+
+</body>
 </html>
