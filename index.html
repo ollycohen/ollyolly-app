@@ -22,7 +22,7 @@
     h1 {
       text-align: center;
       color: #333;
-      margin-top: 20px;
+      padding-top: 20px;
       font-size: 28px;
     }
 
@@ -45,6 +45,11 @@
 
     .hidden {
       display: none !important;
+    }
+
+    md-block { 
+      white-space: pre; 
+      font-family: monospace; 
     }
 
     @media (max-width: 576px) {
@@ -93,19 +98,44 @@
   <a class="btn btn-primary random-position" href="#where" id="where-btn" onclick="showSection('where')">Where</a>
   <a class="btn btn-primary random-position" href="#why" id="why-btn" onclick="showSection('why')">Why</a>
   <a class="btn btn-primary random-position" href="#how" id="how-btn" onclick="showSection('how')">How</a>
+  <a class="btn btn-primary random-position" href="#adventure" id="adventure-btn" onclick="showSection('adventure')">Adventure</a>
 </div>
   
 
 <!-- Statically generated sections with relative links -->
 <div id="who" class="section">
   <button class="btn btn-secondary back-btn" onclick="goBack()">Go Back</button>
-  <h1>who am i, i am i, how do you do</h1>
-  <p>move like a noodle</p>
-  <p>fall like a leaf</p>
-  <p>think on a thought</p>
-  <p>breathe nasally</p>
-  <p>sing involuntarily</p>
-  <a href="https://splattern.substack.com/" target="_blank"><p>write daily</p></a>
+  <h1>Olly Cohen</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <img class="mx-auto d-block" src="ollyHappy.jpg" alt="Olly Happy Image" style="width: 100%; max-width: 200px; margin-top: 20px;">
+    </div>
+    <div class="col-md-6 text-md-start">
+      <br>
+      <p>hi! i am a</p>
+      <p>software engineer</p>
+      <p>adventurer</p>
+      <p>dancer</p>
+      <p>writer</p>
+      <p>in seattle, wa</p>
+      <p>from new jersey</p>
+    </div>
+  </div>
+</div>
+
+<div id="adventure" class="container section">
+  <button class="btn btn-secondary back-btn" onclick="goBack()">Go Back</button>
+  <h1>Run and Ski</h1>
+  <div class="text-wrap">
+    <p>On January 1 2024, I will set out on a 5 month human-powered journey from my front door in Seattle.</p>
+    
+    <p>My goal is to live each second fully in the present, and ski some epic lines along the way. I’ll consider the trip a success if I’m alive and living more freely, more connected, more present at the end.</p> 
+    
+    <p>The vision is to run with a baby jogger capable of carrying enough gear to go up to 7 days between resupplies. Skis will be strapped to the sides of the baby jogger. The baby jogger can be carried on our backs when needed and converted to a sled that can be pushed or towed through snow.</p>
+
+    <p>If you're interested in joining me, please email <i>olly.k.cohen@gmail.com</i></p>
+  </div>
+  <!-- Your additional content for the adventure section goes here -->
 </div>
 
 <div id="what" class="section">
@@ -190,7 +220,7 @@
   };
 
   // Dynamically position buttons randomly
-  const buttonTitles = ['who', 'what', 'when', 'where', 'why', 'how'];
+  const buttonTitles = ['who', 'adventure', 'what', 'when', 'where', 'why', 'how'];
   const positions = [];
   const maxAttempts = 50;
 
