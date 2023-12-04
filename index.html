@@ -175,19 +175,10 @@
   const positions = [];
   const maxAttempts = 50;
 
-  buttonTitles.forEach(title => {
-    let left, top, attempts = 0;
-    do {
-      left = Math.floor(Math.random() * 80) + 1; // Random left position between 1% and 80%
-      top = Math.floor(Math.random() * 80) + 1; // Random top position between 1% and 80%
-      attempts += 1;
 
-      // If the maximum number of attempts is reached, break the loop
-      if (attempts === maxAttempts) {
-        console.error(`Unable to find non-overlapping position for button "${title}" after ${maxAttempts} attempts.`);
-        break;
-      }
-    } while (positions.some(pos => isOverlap(left, top, pos)));
+  buttonTitles.forEach((title, index) => {
+    let left = Math.floor(Math.random() * 80) + 1; // Random left position between 1% and 80%
+    let top = 1 + ((index) / buttonTitles.length) * 100; // Position based on order
 
     positions.push({ left, top });
 
@@ -195,21 +186,6 @@
     button.style.left = `${left}%`;
     button.style.top = `${top}%`;
   });
-
-  function isOverlap(left, top, pos) {
-    let horizontalThreshold = 10; // Default threshold for desktop
-    let verticalThreshold = 5; // Default threshold for desktop
-
-    // Adjust thresholds for mobile
-    if (window.innerWidth <= 576) {
-      horizontalThreshold = 30; // Higher threshold for mobile
-    }
-
-    const horizontalOverlap = Math.abs(left - pos.left) < horizontalThreshold;
-    const verticalOverlap = Math.abs(top - pos.top) < verticalThreshold;
-
-    return horizontalOverlap && verticalOverlap;
-  }
 </script>
 
 </body>
