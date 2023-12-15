@@ -95,17 +95,15 @@
 </head>
 <body>
 
-<div id="homepage" class="d-flex flex-wrap gap-2">
+<div id="homepage" class="d-flex flex-wrap gap-2 container">
   <!-- Dynamically generate and randomly position buttons -->
   <a class="btn btn-primary random-position" href="#who" id="who-btn" onclick="showSection('who')">Who</a>
   <a class="btn btn-primary random-position" href="#work" id="work-btn" onclick="showSection('work')">Work</a>
-  <a class="btn btn-primary random-position" href="#when" id="when-btn" onclick="showSection('when')">When</a>
+  <a class="btn btn-primary random-position" href="https://splattern.substack.com/" id="blog-btn" target="_blank">Blog</a>
   <a class="btn btn-primary random-position" href="#where" id="where-btn" onclick="showSection('where')">Where</a>
-  <a class="btn btn-primary random-position" href="#why" id="why-btn" onclick="showSection('why')">Why</a>
   <a class="btn btn-primary random-position" href="#how" id="how-btn" onclick="showSection('how')">How</a>
   <a class="btn btn-primary random-position" href="#adventure" id="adventure-btn" onclick="showSection('adventure')">Adventure</a>
 </div>
-  
 
 <!-- Statically generated sections with relative links -->
 <div id="who" class="section">
@@ -150,30 +148,17 @@
   <div class="container" id="jobs-container" style="padding-top: 20px;"></div>
 </div>
 
-<div id="when" class="section">
-  <button class="btn btn-secondary back-btn" onclick="goBack()">Go Back</button>
-  <h1>if not now, when!</h1>
-  <div>
-    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&showNav=1&showTitle=1&showCalendars=1&src=YmM4ZmM3N2MzNTYxNGFlZjMzNDE0ODAxNWIwZmU5ZjE1YWI2YTY1YmIwY2FmN2ZiYjEwM2YzNDdkMDhjYzJjOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23B39DDB" frameborder="0" scrolling="no"></iframe>
-  </div>
-</div>
-
 <div id="where" class="section">
   <button class="btn btn-secondary back-btn" onclick="goBack()">Go Back</button>
-  <h1>where i'm going</h1>
+  <h1>Where to Find Me</h1>
   <div>
     <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1-KsbHm6Cf_IuGlyOryy1ZHaY8SAIA60&ehbc=2E312F" width="640" height="480"></iframe>
   </div>
 </div>
 
-<div id="why" class="section">
-  <button class="btn btn-secondary back-btn" onclick="goBack()">Go Back</button>
-  <h1>This is the 'Why' section.</h1>
-</div>
-
 <div id="how" class="section">
   <button class="btn btn-secondary back-btn" onclick="goBack()">Go Back</button>
-  <h1>how to connect</h1>
+  <h1>How to Connect</h1>
   <!-- Google Calendar Appointment Scheduling begin -->
   <div>
     <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1TFi4hqDJM0ozT4QJ0ki2GQP1CBrdusrtXR7uPVi6cPLVUZALlbS0__Z87DpEiZBuGDeXW4Hk1?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
@@ -199,13 +184,10 @@
         console.error('Error fetching data:', error);
       } else {
         renderResume(data)
-        console.log('Fetched data:', data);
       }
     })
   })
   
-
-
   function showSection(sectionId) {
     // Hide all sections
     document.querySelectorAll('.section').forEach(section => {
@@ -244,7 +226,7 @@
   };
 
   // Dynamically position buttons randomly
-  const buttonTitles = ['who', 'adventure', 'work', 'when', 'where', 'why', 'how'];
+  const buttonTitles = ['who', 'adventure', 'work', 'blog', 'where', 'how'];
   const positions = [];
   const maxAttempts = 50;
 
@@ -254,7 +236,7 @@
 
     positions.push({ left, top });
 
-    const button = document.querySelector(`[href="#${title}"]`);
+    const button = document.querySelector(`[id="${title}-btn"]`);
     button.style.left = `${left}%`;
     button.style.top = `${top}%`;
   });
@@ -267,7 +249,6 @@
 
   function renderResume(data) {
     const resumeContainer = document.getElementById('jobs-container');
-    console.log(data)
 
     // Sort the data by id
     data.sort((a, b) => a.id - b.id)
@@ -288,7 +269,6 @@
       
       // Append the job div to the resume container
       resumeContainer.appendChild(jobDiv);
-      console.log("added the resume")
     });
   }
 </script>
