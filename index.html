@@ -33,9 +33,12 @@
 
     .section {
       display: none;
-      text-align: center;
+      text-align: left;
       margin-top: 10px; /* Small top margin for each section */
       position: relative;
+      flex-direction: column;
+      padding-top: 20px; /* Adjust the padding based on the height of the "Go Back" button */
+      margin-bottom: 100px;
     }
 
     .back-btn {
@@ -69,12 +72,6 @@
         left: 50%;
         transform: translateX(-50%);
         z-index: 1;
-      }
-
-      .section {
-        position: relative;
-        flex-direction: column;
-        padding-top: 20px; /* Adjust the padding based on the height of the "Go Back" button */
       }
 
       h1 {
@@ -128,27 +125,127 @@
 
 <div id="adventure" class="container section">
   <button class="btn btn-secondary back-btn" onclick="goBack()">Go Back</button>
-  <h1>Forest Gump Adventure</h1>
+  <h1>Washington and Canada</h1>
   <div class="text-wrap container">
-    <img class="mx-auto d-block" src="ollyJogger.jpg" alt="Olly with Baby Jogger" style="width: 100%; max-width: 200px; margin-bottom: 20px;">
+    <div class="row">
+      <div class="col-md-6">
+        <img class="mx-auto d-block lazy" src="ollyJogger.jpg" alt="Olly with Baby Jogger" style="width: 100%; margin-bottom: 20px;">
+        <p>
+          From January 1 to May 1, 2024, I set out on a human-powered journey from my front door in Seattle. 
+          I ran with a baby jogger holding my camping gear, food, and skis. 
+          This adventure was inspired in large part by my friend <a target="_blank" href="https://www.newsminer.com/man-runs-across-alaska-to-raise-money-for-wounded-warriors-project/article_4849277f-caae-5c9e-80b9-08aced58efbb.html">Matt Montavon</a> who ran 1,100 miles across Alaska with a stroller.
+          The run also <a target="_blank" href="https://www.every.org/givedirectly/f/give-directly-to-people">raised money for GiveDirectly.</a> 
+        </p>
+      </div>
+      <div class="col-md-6">
+        <iframe class="lazy"src="https://www.google.com/maps/d/embed?mid=1MapiHkW74jEYe18Yt6GOQ5QQ5h1kCxU&ehbc=2E312F&z=5" style="height: 400px;"></iframe>
+      </div>
+    </div>
+    <div class="row" style="padding: 5%;">
+      <div class="col-md-6">
+          <table border="1">
+            <tr>
+                <th>Some Numbers</th>
+            </tr>
+            <tr>
+                <td>Miles Traveled on Foot</td>
+                <td>1503</td> <!-- Replace XXXX with the actual total miles -->
+            </tr>
+            <tr>
+                <td>Days Living out of Baby Stroller</td>
+                <td>121</td> <!-- Replace XX with the actual total days -->
+            </tr>
+            <tr>
+                <td>Ski Days</td>
+                <td>28</td> <!-- Replace XX with the actual total ski days -->
+            </tr>
+            <tr>
+              <td>Elevation (not including ski days)</td>
+              <td>74895 ft</td> <!-- Replace XX with the actual total ski days -->
+            </tr>
+            <tr>
+              <td>Average Run Length</td>
+              <td>23.85 miles</td> <!-- Replace XX with the actual total ski days -->
+            </tr>
+            <tr>
+              <td>Mountain Passes Crossed</td>
+              <td>12</td>
+            </tr>
+          </table>
+      </div>
+      <div class="col-md-6">
+        <h3>Press</h3>
+        <p>CBC Edmonton: <a target="_blank" href="https://www.cbc.ca/listen/live-radio/1-52-radio-active/clip/16052448-ski-run-snow">Ski Run for Snow</a></p>
+        <p>Clearwater Times: <a target="_blank" href="https://www.clearwatertimes.com/local-news/a-human-powered-adventure-into-the-rockies-with-olly-7326150">A human-powered adventure into the Rockies with Olly</a></p>
+        <p>Rocky Mountain Goat: <a target="_blank" href="Seattle to Mount Robson on foot">https://www.therockymountaingoat.com/2024/03/seattle-to-mount-robson-on-foot/</a></p>
+        <p>Ferry County View: <a target="_blank" href="ferryCountyView.jpg">A lovely, delightful traipse</a></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+          <h1>Thank You!</h1>
+          <p>To everyone who connected with me, shared their friendship, an adventure, or inspiration. I'm grateful for each and every interaction that gave me a boost and reminded me I wasn't alone.</p>
 
-    <p>On January 1 2024, I set out on a human-powered journey from my front door in Seattle.</p>
-    
-    <p>My goal is to live each second fully in the present and ski some epic lines along the way.</p> 
-    
-    <p>I'm running with a baby jogger holding my camping gear, food, and skis.</p>
+          <h4>Emergency Contacts</h4>
+          <p>Mike Cassidy and Dan Royal were there to check in with me every single day of the adventure, even in the backcountry with via inReach. Having the consistency of being in contact with them through the most remote parts of the journey kept me sane. Mike Cassidy has been a mentor ever since he took me for my first outdoor rock climb at summer camp when I was 12 years old. Dan Royal has been my ski partner and mountaineering mentor since I moved to Seattle last year.</p>
 
-    <p>This adventure was inspired in large part by my friend <a target="_blank" href="https://www.newsminer.com/man-runs-across-alaska-to-raise-money-for-wounded-warriors-project/article_4849277f-caae-5c9e-80b9-08aced58efbb.html">Matt Montavon</a> who ran 1,100 miles across Alaska with a stroller.</p>
+          <h4>Family</h4>
+          <p>My mom, Kathy Karp Cohen and my dad Andy Cohen are my biggest fans. My bffs Daniel and Lukas who love and accept me with my quirks. My grandparents Geega and Pop Pop from whom I get my cautious and thoughtful approach to adventure. My Uncle Jonny who has been a role model to me my whole life. My aunt Ronna for inspiring me to work hard and be rugged. My aunt Marci for inspiring me to keep my heart open and wander. My cousin Erica for her extreme unconditional love, cheering me on throughout the adventure. My cousin Dara for her extreme honesty and coining the phrase “Big Dumb Adventure”.</p>
 
-    <p>You can stay up to date with the adventure by reading my daily blog <a target="_blank" href="https://splattern.substack.com/">Splattern</a></p>
-    
-    <p>You can support the adventure by donating to my <a target="_blank" href="https://www.every.org/givedirectly/f/give-directly-to-people">fundraiser for GiveDirectly.</a></p>
+          <h4>Seattle</h4>
+          <p>Tiara, Tally, Anna, Erik, Julie, Chanel— the world's greatest housemates who sent me off inflated with love. Isabella whose friendship I treasure. My friends in the Cowgill Trail Collective for motivating me to test my limits.</p>
 
-    <p><b>Update: February 21</b></p>
+          <h4>Mentors</h4>
+          <p>
+            Zach Anderson, the least self-possessed mountain guide I've ever met, who joined me on the Mount Baker adventure leg. 
+            Antoine who showed me how to be fearless in the backcountry. 
+            Amanda and Matt Montovan for enabling backcountry adventures in Alaska over the last two summers that have been invaluable outdoor education. 
+            Garr who told me if there's something in my heart I feel compelled to do, do it and do it fearlessly.
+            Jess Shade who brought me on my first ever snow camping trip and taught me to lead climb. 
+          </p>
 
-    <iframe width="115" height="115" src="https://www.youtube.com/embed/oiedHyBV5AM?si=l2w3j4UD-nXHsNBI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <h4>Direct Support</h4>
+          <p>
+            JD and Glen Moore who sold me much of the gear that came on this adventure. 
+            Pam and Eric Dolven who hosted me on both ends of my journey.
+            Devin Groody who housed me through the cold snap and did not one but two photo shoots with me.
+            Bob and Brenda from Upriver for inviting me to go skiing when they saw me hanging out at a gas station.
+            Tom Clement and Meesh Alwine who hosted me at both ends of the adventure and made it clear I will always have a home in Marblemount.
+            Conor Roland who became an instant friend on the Easton Glacier and understood the vision for the adventure before even I did.
+            Calvin Lautsch who gave me a roof to sleep under, not knowing who I was, at a time when I truly needed it being cold, wet, and physically destroyed. 
+            Anthony Marra for hosting me in Bellingham and being one of the people who inspired this adventure after bikepacking with skis across the Pacific Northwest, Pakistan, and New Zealand. He enthusiastically shared his learnings from his multiple multi-monthlong, multi-sport human-powered adventures.
+            Katie and Mark Hicks for hosting me in the delightful community of Birch Bay, in the  northwestern of the lower 48.
+            Cormac Toler-Scott for welcoming me to Canada and being a damn good friend. 
+            Caitlyn Schneider and Julian for making me know I always have a home in Vancouver and sharing with me their wealth of knowledge about adventuring in the south coast mountains for Canada. 
+            Larissa and Jon Wescott for hosting me in Lions Bay, enabling alternate sport adventures (hiking, whitewater rafting, bouldering), and staying invested in the adventure after I left.
+            Lisa from Whistler Community Services who gave me two complimentary lift tickets to the ski resort.
+            Sara Jennings who agreed to host me at the last minute in Whistler, enabling to use the free lift tickets.
+            Vivian Yu Zhou and Bill Bateman for hosting me for two relaxing nights in Pemberton. 
+            Collin and Rob for chatting with me on Pavllion Lake and giving me Kokanee salmon they caught ice fishing.
+            Jen and Ivan for hosting me for two nights in Kamloops and cooking the finest meals of my entire adventure.
+            Liam Waller for befriending me on the side of the highway in McLure and letting me camp on his land. 
+            Jean Sigrid Nelson for hosting me in Clearwater and becoming one of the biggest cheerleaders of my trip, her encouragement continues to lift me.
+            The Onslow family— Grayson, Richard, Lee, Tom, Scout and, Snickers— for hosting me for a full week in Blue River as I recovered from fatigue and joint wear and tear. This extended time to recover became the turning point of the adventure, as it was the last time I took consecutive rest days for the remaining two months of the trip.
+            Peggy and Tom who hosted me for two nights in Valemount in the house they built themselves and shared stories from their fascinating lives. 
+            Brittany Andrews who hosted me in Jasper for three nights as I prepped for the Icefields Parkway and got me onto a free icewalk through Maligne Canyon. 
+            Dave MacDowell who set me up with a pair of Norda's, the shoe that unlocked pain-free big days for me, and became one of my biggest cheerleaders as he followed along with the adventure.
+            Family Terra Tributa— Leo, Luca, Bertrand, and Vanessa— who hosted me for three nights in Kimberley all of which involved Settlers of Catan.
+            Dom, Brodi, Max, and Serafina McRae for tracking me down deep into the snow-covered road to Gray Creek Pass and then steering me to Kaslo and New Denver. 
+            AJ for letting me leave my things at his home in Retallak and giving me directions to all the skiing.
+            Helen Davis and Daniel Hellyer who hosted me for a lovely night in New Denver and have continued to stay in touch as they follow along.
+            Hannah and Michael Cloutier and who let me camp on their land after knocking on their door and turning out to be Warmshowers hosts.
+            Heather in Rossland who helped scavenge materials for a makeshift magic carpet sled before I set off on the old highway. 
+            Glen who gave me a cup of coffee with Bailey's my last morning in Canada. 
+            Shauna Someday for letting me camp on her land late at night after getting kicked off a man's property and sending me off with a cornucopia of snacks. 
+            Patty and Rob Slagle who hosted me at their private, underground B&B in Republic and taught me about the town's history. 
+            JT and Lisa for hosting me in Winthrop, Washington. Their friendship and hospitality went above and beyond, including canoeing on the Chewuch, wood-fired hot tub, and a full physical therapy session. 
+          </p>
+      </div>
+
+    </div>
+    <!-- Make new div row for additional content for the adventure section -->
   </div>
-  <!-- Your additional content for the adventure section goes here -->
 </div>
 
 <div id="work" class="container section">
