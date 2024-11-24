@@ -15,17 +15,19 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
-      background-color: #f4f4f4;
+      background-color: #cdd3fb;
     }
 
     section {
       margin-bottom: 0;
       padding: 4rem 0;
       scroll-margin-top: 70px; /* Accounts for fixed navbar */
+      position: relative;
+      min-height: 600px;
     }
 
     section:nth-child(odd) {
-      background-color: #f4f4f4;  /* Light gray for odd sections */
+      background-color: #cdd3fb;  
     }
 
     section:nth-child(even) {
@@ -36,6 +38,7 @@
       text-align: center;
       color: #333;
       margin-bottom: 2rem;
+      margin-left: 150px;
     }
 
     md-block { 
@@ -48,16 +51,8 @@
       height: calc(100vh - 80px); /* Adjust the height as needed */
       border: 0;
     }
-
-    /* Update section styling to remove gaps */
-    section {
-      margin-bottom: 0;  /* Remove margin between sections */
-      padding: 4rem 0;   /* Add vertical padding instead */
-      scroll-margin-top: 70px;
-    }
-
     /* Update container padding */
-    section .container {
+    .container {
       padding: 0 2rem;
     }
 
@@ -117,11 +112,11 @@
 
     /* Adjust main content */
     section {
-      margin-left: 250px;
+      margin-left: 110px;
       padding: 4rem 2rem;
     }
 
-    /* Mobile styles (screens smaller than 768px) */
+    /* Mobile styles (screens smaller than 868px) */
     @media (max-width: 868px) {
       .fixed-left {
         position: fixed;
@@ -163,6 +158,75 @@
     }
 
     /* Keep existing desktop styles outside the media query */
+
+    /* Timeline styling */
+    .timeline {
+      position: absolute;
+      left: 120px;  /* Reduced from 270px */
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: #000;
+    }
+
+    .timeline-date {
+      position: absolute;
+      top: 50px;
+      transform: translateY(-50%);
+      left: -120px;  /* Reduced from -250px */
+      font-size: 0.9rem;
+      color: #666;
+      margin: 2rem 0;
+      padding-left: 15px;
+      max-width: 80px;
+      white-space: normal;
+    }
+
+    /* Container for timeline and content */
+    .content-wrapper {
+      position: relative;
+      margin-left: 250px;  /* Keep navbar width */
+      padding-left: 20px;  /* Reduced from 40px */
+    }
+
+    /* Mobile adjustments - match navbar breakpoint at 868px */
+    @media (max-width: 868px) {
+      .timeline {
+        left: 15px;  /* Reduced from 20px */
+        height: 100%;
+      }
+      
+      .timeline-date {
+        left: -10px;  /* Reduced from -15px */
+        font-size: 0.8rem;
+        margin: 1rem 0;
+      }
+      
+      .content-wrapper {
+        margin-left: 0;
+        padding-left: 25px;  /* Reduced from 40px */
+      }
+
+      section {
+        margin-top: 120px;
+      }
+    }
+
+    #cover {
+      min-height: 100vh;  /* Full viewport height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+      text-align: center;
+      padding: 0;  /* Remove padding since we're using flex centering */
+    }
+
+    /* Optional: adjust timeline to start after cover section */
+    .timeline {
+      top: 100vh;
+    }
   </style>
 </head>
 <body>
@@ -171,16 +235,32 @@
   <div class="container-fluid flex-column align-items-start">
     <a href="#" class="navbar-brand mb-4">Big Dumb Adventure</a>
     <div class="navbar-nav flex-column">
+      <a class="nav-link mb-3" href="#pakistan">Pakistan</a>
       <a class="nav-link mb-3" href="#africa">East Africa</a>
       <a class="nav-link mb-3" href="#canada">Western Canada</a>
       <a class="nav-link mb-3" href="https://bigdumbadventure.substack.com" target="_blank">Blog</a>
-      <a class="nav-link" href="mailto:olly.k.cohen@gmail.com">Contact</a>
     </div>
   </div>
 </nav>
 
-<div class="container">
-  <section id="africa" class="py-5">
+<div class="content-wrapper">
+  <div class="timeline"></div>
+
+  <section id="cover" style="background-color: #ffffff; text-align: center; padding: 8rem 0;">
+    <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Human-powered adventures</h1>
+    <p style="font-size: 1.2rem; color: #666;">presented by <a href="https://nordarun.com" target="_blank" style="color: #000; text-decoration: none; font-weight: bold;">Norda</a></p>
+  </section>
+
+  <section id="pakistan">
+    <div class="timeline-date">April 2025</div>
+    <h1>Pakistan</h1>
+    <div class="container text-center">
+      <p class="">Coming Soon</p>
+    </div>
+  </section>
+  
+  <section id="africa">
+    <div class="timeline-date">June to October 2024</div>
     <h1>East Africa</h1>
     <div class="row">
        <div class="col-md-6">
@@ -197,6 +277,64 @@
               My run took me from the Tanzania coast to the top of Kilimanjaro to the Shoe 4 Africa Hospital itself and onwards to Uganda and Rwanda. The adventure also included fastest known times on Mt Meru, the fifth tallest mountain in Africa, and Ol Doinyo Lengai, the "Mountain of God".
             </p>
           </div>
+          <div class="row text-md-start">
+            <table>
+              <tr>
+                  <th>Key Figures</th>
+              </tr>
+              <tr>
+                  <td>Countries Visited: Tanzania, Kenya, Uganda, Rwanda</td>
+              </tr>
+              <tr>
+                  <td>Distance Run (miles)</td>
+                  <td>1038.67</td>
+              </tr>
+              <tr>
+                  <td>Elevation Climbed (ft)</td>
+                  <td>120704.11</td>
+              </tr>
+              <tr>
+                  <td>Mt Kilimanjaro Ascent</td>
+                  <td><a target="_blank" href="https://www.strava.com/activities/12017643932">24 hours</a></td>
+              </tr>
+              <tr>
+                  <td>Mt Meru Ascent (Fastest Known Time)</td>
+                  <td><a target="_blank" href="https://fastestknowntime.com/route/mt-meru-tanzania">6 hours</a></td>
+              </tr>
+              <tr>
+                  <td>Ol Doinyo Lengai Ascent (Fastest Known Time)</td>
+                  <td><a target="_blank" href="https://fastestknowntime.com/route/ol-doinyo-lengai-tanzania">3 hours</a></td>
+              </tr>
+              <tr>
+                  <td>Lost in Kilimanjaro Jungle</td>
+                  <td>1 day</td>
+              </tr>
+              <tr>
+                  <td>Gregorian Rift Rim to Rim</td>
+                  <td>1 week</td>
+              </tr>
+              <tr>
+                  <td>Full Length of Lake Natron (home to 75% of the world's flamingos)</td>
+                  <td>2 days</td>
+              </tr>
+              <tr>
+                  <td>Detained by Maasai Warriors</td>
+                  <td>2 hours</td>
+              </tr>
+              <tr>
+                  <td>Training with the Kenya Pros</td>
+                  <td>5 days</td>
+              </tr>
+              <tr>
+                  <td>Training with the Uganda Pros</td>
+                  <td>10 days</td>
+              </tr>
+              <tr>
+                  <td>Congo Nile River Divide Trail</td>
+                  <td>4 days</td>
+              </tr>
+          </table>
+          </div>
        </div>
        <div class="col-md-6">
          <div class="row">
@@ -206,69 +344,13 @@
                    style="border:none; overflow-y: hidden; background-color:white; min-width: 320px; max-width:420px; width:100%; height: 420px;" seamless>
            </iframe>
          </div>
-         <div class="row text-md-start">
-           <table>
-             <tr>
-                 <th>Facts</th>
-             </tr>
-             <tr>
-                 <td>Countries Visited: Tanzania, Kenya, Uganda, Rwanda</td>
-             </tr>
-             <tr>
-                 <td>Distance Run (miles)</td>
-                 <td>1038.67</td>
-             </tr>
-             <tr>
-                 <td>Elevation Climbed (ft)</td>
-                 <td>120704.11</td>
-             </tr>
-             <tr>
-                 <td>Mt Kilimanjaro Ascent</td>
-                 <td><a target="_blank" href="https://www.strava.com/activities/12017643932">24 hours</a></td>
-             </tr>
-             <tr>
-                 <td>Mt Meru Ascent (Fastest Known Time)</td>
-                 <td><a target="_blank" href="https://fastestknowntime.com/route/mt-meru-tanzania">6 hours</a></td>
-             </tr>
-             <tr>
-                 <td>Ol Doinyo Lengai Ascent (Fastest Known Time)</td>
-                 <td><a target="_blank" href="https://fastestknowntime.com/route/ol-doinyo-lengai-tanzania">3 hours</a></td>
-             </tr>
-             <tr>
-                 <td>Lost in Kilimanjaro Jungle</td>
-                 <td>1 day</td>
-             </tr>
-             <tr>
-                 <td>Gregorian Rift Rim to Rim</td>
-                 <td>1 week</td>
-             </tr>
-             <tr>
-                 <td>Full Length of Lake Natron (home to 75% of the world's flamingos)</td>
-                 <td>2 days</td>
-             </tr>
-             <tr>
-                 <td>Detained by Maasai Warriors</td>
-                 <td>2 hours</td>
-             </tr>
-             <tr>
-                 <td>Training with the Kenya Pros</td>
-                 <td>5 days</td>
-             </tr>
-             <tr>
-                 <td>Training with the Uganda Pros</td>
-                 <td>10 days</td>
-             </tr>
-             <tr>
-                 <td>Congo Nile River Divide Trail</td>
-                 <td>4 days</td>
-             </tr>
-         </table>
-         </div>
+         
        </div>
      </div>
   </section>
 
-  <section id="canada" class="py-5">
+  <section id="canada">
+    <div class="timeline-date">January to May2024</div>
     <h1>Western Canada</h1>
     <div class="text-wrap container">
       <div class="row">
@@ -289,7 +371,7 @@
         <div class="col-md-6">
             <table style="margin-bottom: 20px;">
               <tr>
-                  <th>Numbers</th>
+                  <th>Key Figures</th>
               </tr>
               <tr>
                   <td>Miles Traveled on Foot</td>
@@ -413,10 +495,12 @@
   </section>
 </div>
 
+
+
+<footer class="text-center py-4 bg-dark" style="color: white; margin-left: 250px;">
+  <p style="margin: 0;">Contact: <a href="mailto:olly.k.cohen@gmail.com" style="color: #ff3333;">olly.k.cohen@gmail.com</a></p>
+</footer>
 <!-- Add Bootstrap JS and Popper.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-
-
-
 </body>
 </html>
